@@ -1,5 +1,7 @@
 package org.generation.italy.demo.pojo;
 
+import org.generation.italy.interf.PriceableInt;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +16,7 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table
-public class Pizza {
+public class Pizza implements PriceableInt{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,9 +65,11 @@ public class Pizza {
 		this.description = description;
 	}
 
+	@Override
 	public int getPrice() {
 		return price;
 	}
+	@Override
 	public void setPrice(int price) {
 		this.price = price;
 	}
