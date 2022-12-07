@@ -2,13 +2,12 @@ package org.generation.italy.demo.repository;
 
 import java.util.List;
 
-import org.generation.italy.demo.pojo.Pizza;
+import org.generation.italy.demo.pojo.Drink;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public interface PizzaRepository extends JpaRepository<Pizza, Integer> {
+public interface DrinkRepository extends JpaRepository<Drink, Integer> {
 	
-	public List<Pizza> findByNameContainingIgnoreCase(String name);
+	public List<Drink> findByNameContainingIgnoreCase(String name);
 }
