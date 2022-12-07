@@ -30,8 +30,10 @@ public class PrdController {
 		products.addAll(pizzaService.findAll());
 		products.addAll(drinkService.findAll());
 		
-		model.addAttribute("products", products);
+		products.sort((price1, price2) -> price2.getPrice() - price1.getPrice());
 		
+		model.addAttribute("products", products);
+
 		return "prd-home";
 	}
 }
